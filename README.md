@@ -1,104 +1,59 @@
-# SNHU-CS-230
-# Draw It or Lose It - Game Management System
-
-## Project Overview
-This repository contains a multi-phase development project for The Gaming Room's "Draw It or Lose It" game platform, developed as part of CS 230 coursework. The project evolved from initial Java implementation focusing on design patterns to a comprehensive software design document addressing platform expansion requirements.
+# Draw It or Lose It - Software Design Document Reflection
 
 ## Client and Software Requirements
-The Gaming Room needed to expand their Android-based game "Draw It or Lose It" to a web-based platform. The game, similar to "Win, Lose or Draw", required:
-* Multiple concurrent team support
-* Unique game/team name validation
-* Timed gameplay (four one-minute rounds)
-* Progressive image rendering (30-second intervals)
-* Cross-platform accessibility
+The Gaming Room wanted to expand their existing Android game "Draw It or Lose It" into a web-based gaming platform. The game follows the format of "Win, Lose or Draw" where teams compete to guess drawings as they're rendered. They needed a system that could:
+* Handle multiple teams competing simultaneously
+* Maintain unique identifiers for games and teams
+* Manage timed rounds of gameplay
+* Control progressive image rendering
+* Ensure seamless cross-platform functionality
 
-## Development Highlights
+## Development Strengths
+In developing the documentation and implementation, the strongest aspects were:
+* Implementation of the singleton pattern for game instance management
+* Detailed platform analysis comparing operating system characteristics
+* Thorough security considerations for web-based deployment
+* Clear articulation of memory and storage management strategies
 
-### Phase 1: Core Implementation
-Successfully implemented key Java components including:
-* Singleton pattern in GameService class to ensure single game engine instance
-* Iterator pattern for efficient game/team/player lookups
-* Unique identifier management for games, teams, and players
-* Unit testing through SingletonTester class
+## Design Document Process Benefits
+Working through the design document before implementation provided several advantages:
+* Helped identify potential issues before coding began
+* Provided clear structure for implementing design patterns
+* Forced careful consideration of platform-specific constraints
+* Created a roadmap for future development phases
 
-```java
-// Singleton Implementation
-private static GameService instance = null;
+## Areas for Improvement
+If revising this work, the primary focus would be on:
+* Expanding the security section to include more detailed authentication protocols
+* Adding more specific performance metrics for different platform configurations
+* Including more detailed database design for game state management
+* Providing more concrete examples of API endpoints for client-server communication
 
-public static GameService getGameService() {
-    if (instance == null) {
-        instance = new GameService();
-    }
-    return instance;
-}
-```
+## User-Centered Design Approach
+Understanding user needs was crucial for successful design:
+* Analyzed existing Android app to maintain familiar user experience
+* Considered cross-platform accessibility requirements
+* Focused on performance to ensure smooth gameplay
+* Prioritized scalability for multiple concurrent games
 
-### Phase 2: Security Implementation
-Added authentication layer using Maven:
-* Secure user session management
-* Role-based access control
-* Integration with web-based architecture
+This user-focused approach was essential because:
+* It ensures the final product meets actual user requirements
+* Helps prevent feature creep and unnecessary complexity
+* Guides technical decisions based on real user needs
+* Improves the likelihood of successful adoption
 
-### Phase 3: Software Design Documentation
-Developed comprehensive design documentation including:
-* Detailed platform analysis (Windows, Linux, Mac, Mobile)
-* System architecture recommendations
-* Memory and storage management strategies
-* Security considerations for web deployment
+## Software Design Strategy
+The development approach included:
+* Starting with high-level architectural decisions
+* Using design patterns to solve specific challenges
+* Iterative documentation updates as requirements evolved
+* Platform-specific analysis for deployment considerations
 
-## Technical Achievements
-The strongest aspects of this project include:
-1. Clean implementation of design patterns
-2. Thorough platform evaluation and recommendations
-3. Consideration of scalability in design
-4. Integration of security features
+Future similar projects would benefit from:
+* Earlier integration of security considerations
+* More emphasis on API design
+* Greater focus on automated testing strategies
+* More detailed performance benchmarking
+* Increased attention to database optimization
 
-## Development Process Insights
-The iterative development process proved valuable by:
-* Starting with core Java implementation
-* Adding security layers through Maven
-* Expanding to full system architecture design
-* Considering cross-platform deployment strategies
-
-## Design Considerations
-Key factors that influenced the design:
-* Need for centralized game state management (Singleton pattern)
-* Efficient data lookup requirements (Iterator pattern)
-* Cross-platform compatibility
-* Scalability for multiple concurrent games
-* Security for web-based deployment
-
-## Recommendations and Future Improvements
-Areas identified for enhancement:
-* Implement caching for improved performance
-* Add load balancing for better scalability
-* Enhance security features beyond basic authentication
-* Implement real-time gameplay features
-* Add persistent storage for game states
-
-## Platform Recommendations
-After careful analysis, Linux emerged as the recommended server platform due to:
-* Cost-effectiveness
-* Robust performance
-* Strong security features
-* Excellent support for web hosting
-* Scalability options
-
-## Getting Started
-
-### Prerequisites
-* Java JDK 8 or higher
-* Maven (for authentication module)
-* IDE supporting Java development
-
-### Installation
-1. Clone the repository
-2. Import as Maven project
-3. Run `mvn clean install`
-4. Execute ProgramDriver class to test core functionality
-
-## Testing
-The project includes:
-* SingletonTester for verifying GameService instance management
-* Iterator pattern tests for data access
-* Authentication module tests
+This experience reinforced the importance of thorough design documentation before implementation, while maintaining flexibility to adapt to changing requirements during development.
